@@ -1,11 +1,21 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
+    id 'kotlin-kapt'
+
+
+
+
 }
 
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
+
+    buildFeatures {
+        dataBinding true
+    }
 
     defaultConfig {
         applicationId "tech.edem.trivia"
@@ -33,7 +43,7 @@ android {
 }
 
 dependencies {
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
